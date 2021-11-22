@@ -23,8 +23,8 @@ body::-webkit-scrollbar {
     width: 100%;
     height: 100vh;
     z-index: 1;
-    background: rgb(0,155,255);
-    background: linear-gradient(120deg, rgba(0,155,255,1) 0%, rgba(19,20,219,1) 50%, rgba(124,0,255,1) 100%);
+    background: rgb(19,204,219);
+    background: linear-gradient(150deg, rgba(19,204,219,1) 0%, rgba(19,20,219,1) 44%, rgba(239,0,255,1) 100%);
 }
 
 .second{
@@ -38,12 +38,13 @@ body::-webkit-scrollbar {
 }
 
 .nav-link{
-    font-size: 18px;
+    font-size: 20px;
     margin: 0 1vw;
+    font-weight: 500;
 }
 
 .terminal{
-    position: relative;
+    position: absolute;
     top: 30vh;
     left: 25vw;
     width: 65vw;
@@ -132,4 +133,7 @@ body::-webkit-scrollbar {
     font-size: 12px;
 }
 
+.cir-btn-three:hover{
+    background: rgb(194, 153, 146);
+}
 
