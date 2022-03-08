@@ -1,67 +1,75 @@
 let nav = document.querySelector('nav');
-const terminal = document.querySelector('.terminal');
-const closeBtn = document.querySelector('.cir-btn-three');
+const terminal = document.querySelector('.mainterminal');
 const mainCont = document.querySelector('.cont');
+const navLink = document.querySelectorAll('.nav-link');
 
 window.addEventListener('scroll', ()=>{
     if (window.pageYOffset > 100) {
-        nav.classList.add('bg-dark','shadow');
+        nav.classList.add('navbar-drop-shadow');
     } else {
-        nav.classList.remove('bg-dark','shadow');
+        nav.classList.remove('navbar-drop-shadow');
     }
 });
 
-/*
-closeBtn.addEventListener("click", ()=>{
+$('.cir-btn-three').click(()=>{
     terminal.style.display = "none"
 })
+
 setInterval(()=>{
     if(terminal.style.display = "none"){
         terminal.style.display = "block"
     }
-}, 6000); */
+}, 5000); 
 
-/*
-function onDrag({movementX, movementY}){
-    let getStyle = window.getComputedStyle(terminal);
-    let left = parseInt(getStyle.left);
-    let top = parseInt(getStyle.top);
-    terminal.style.left = `${left + movementX}vw`;
-    terminal.style.top = `${top + movementY}vh`;
-}
 
-window.addEventListener("mousedown",()=>{
-    mainCont.addEventListener("mousemove", onDrag);
-})
+//make Terminal Draggable
 
-window.addEventListener("mouseup",()=>{
-    mainCont.removeEventListener("mousemove", onDrag);
-})*/
+dragTerminal(document.querySelector('.main'));
 
-terminal.addEventListener("mousedown", mousedown);
-
-function mousedown(e) {
-    window.addEventListener("mousemove",mousemove);
-    window.addEventListener("mouseup",mouseup);
-
-    let prevX = e.clientX;
-    let prevY = e.clientY;
-
-    function mousemove(e){
-        let newX = prevX - e.clientX;
-        let newY = prevY - e.clientY;
-
-        const rect = terminal.getBoundingClientRect();
-
-        terminal.style.left = rect.left - newX + "vw";
-        terminal.style.top = rect.top - newY + "vh";
-
-        prevX = e.clientX;
-        prevY = e.clientY;
+function dragTerminal(elmnt) {
+    var pos1 = 0; 
+    var pos2 = 0; 
+    var pos3 = 0;
+    var pos4 = 0;
+    if (document.getElementById(elmnt.id + "terminal")) {
+      /* if present, the header is where you move the DIV from:*/
+      document.getElementById(elmnt.id + "terminal").onmousedown = dragMouseDown;
+    } else {
+      /* otherwise, move the DIV from anywhere inside the DIV:*/
+      elmnt.onmousedown = dragMouseDown;
     }
 
-    function mouseup(e){
-        window.removeEventListener("mousemove", mousemove);
-        window.removeEventListener("mouseup", mouseup);
-    }
+    function dragMouseDown(e) {
+        e = e || window.event;
+        e.preventDefault();
+        // get the mouse cursor position at startup:
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        
+        document.onmouseup = closeDragElement;
+        // call a function whenever the cursor moves:
+        document.onmousemove = elementDrag;
+      }
+
+      function elementDrag(e) {
+        e = e || window.event;
+        e.preventDefault();
+        // calculate the new cursor position:
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+
+        // set the element's new position:
+        elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+        elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+      }
+    
+      function closeDragElement() {
+        /* stop moving when mouse button is released:*/
+        document.onmouseup = null;
+        document.onmousemove = null;
+      }
+
 }
+

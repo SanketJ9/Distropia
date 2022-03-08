@@ -1,0 +1,265 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
+$primary-color: #8449ff;
+$font: "Roboto", sans-serif;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.cont {
+  nav {
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+
+    .navbar {
+      height: 80%;
+      width: 70%;
+      background: rgb(255, 255, 255);
+      border-radius: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1.5rem;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+      .logo {
+        width: 200px;
+      }
+
+      .nav-ul {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        width: 240px;
+        justify-content: space-between;
+
+        .nav-item {
+          margin-left: 5px;
+
+          a {
+            color: black;
+            text-decoration: none;
+            font-size: 16px;
+            font-family: $font;
+          }
+        }
+      }
+    }
+  }
+
+  .first {
+    width: 100vw;
+    height: 70vh;
+    background: rgb(214, 0, 255);
+    background: linear-gradient(
+      135deg,
+      rgba(214, 0, 255, 0.8) 0%,
+      rgba(90, 132, 255, 0.8) 61%,
+      rgba(0, 241, 255, 0.8) 100%
+    );
+    border-radius: 0 0 2rem 2rem;
+
+    p {
+      position: absolute;
+      top: 35%;
+      left: 15%;
+      font-size: 3.5rem;
+      font-family: $font;
+      font-weight: 900;
+      color: white;
+
+      span {
+        font-size: 4rem;
+      }
+    }
+
+    .main {
+      position: relative;
+      top: 15vh;
+      left: 50vw;
+      width: 35vw;
+      height: 45vh;
+      z-index: 1;
+      background: transparent;
+      z-index: 1;
+
+      .mainterminal {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 35vw;
+        height: 45vh;
+        background: rgba(46, 46, 46, 0.4);
+        border-radius: 12px 12px 12px 12px;
+
+        .topbar {
+          position: relative;
+          top: 0;
+          width: 100%;
+          height: 2rem;
+          background: rgb(36, 36, 36);
+          border-radius: 12px 12px 0 0;
+
+          .btn-cont {
+            width: 120px;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          }
+
+          .cir-btn-one {
+            position: absolute;
+            left: 25%;
+            width: 20px;
+            height: 20px;
+            background: rgb(75, 75, 75);
+            color: rgb(255, 255, 255);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 10px;
+          }
+
+          .cir-btn-two {
+            position: absolute;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            background: rgb(75, 75, 75);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 10px;
+          }
+
+          .cir-btn-three {
+            position: absolute;
+            left: 75%;
+            width: 20px;
+            height: 20px;
+            background: rgb(233, 51, 19);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+          }
+
+          .cir-btn-three:hover {
+            background: rgb(255, 62, 28);
+          }
+        }
+
+        .command-div {
+          position: absolute;
+          left: 0;
+          display: flex;
+          flex-direction: row;
+
+          .command1 {
+            font-size: 1.5vw;
+            margin: 0 10px;
+            color: rgb(206, 206, 206);
+            font-family: "Ubuntu", sans-serif;
+          }
+
+          .command2 {
+            font-size: 1.5vw;
+            color: rgb(255, 255, 255);
+            font-family: "Ubuntu", sans-serif;
+          }
+        }
+      }
+    }
+  }
+
+  .second {
+    width: 100%;
+    padding: 4rem 15%;
+
+    .newdistros-border {
+      background: rgb(214, 0, 255);
+      background: linear-gradient(
+        135deg,
+        rgba(214, 0, 255, 0.8) 0%,
+        rgba(90, 132, 255, 0.8) 61%,
+        rgba(0, 241, 255, 0.8) 100%
+      );
+      padding: 3px;
+      border-radius: 0.5rem;
+
+      .newdistros {
+        width: 100%;
+        background: rgb(255, 255, 255);
+        padding: 20px 20px;
+        border-radius: 0.4rem;
+
+        h3 {
+          font-family: $font;
+          font-size: 1.5rem;
+          margin-bottom: 10px;
+        }
+
+        .new-distro-list {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+
+          .distro-item {
+            width: 32%;
+            height: 200px;
+            background: rgb(247, 247, 247);
+            border-radius: 0.25rem;
+            display: flex;
+            flex-direction: column;
+            border-radius: 0.5rem;
+
+            .distro-cover {
+              height: 60%;
+              width: 100%;
+
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 0.5rem 0.5rem 0 0;
+              }
+            }
+
+            .distro-details {
+              height: 40%;
+              width: 100%;
+              padding: 5px 10px;
+
+              h3 {
+                font-family: $font;
+                font-size: 1.8rem;
+              }
+
+              h4 {
+                font-family: $font;
+                font-size: 1rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
